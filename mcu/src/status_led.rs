@@ -1,71 +1,21 @@
-#[derive(Copy, Clone)]
-pub enum Status {
-    None,
-    Init,
-    Okay,
-    Error,
+#[derive(Clone)]
+pub struct Rgb888 {
+    pub red: u8,
+    pub green: u8,
+    pub blue: u8,
 }
 
-impl Into<(bool,bool,bool)> for Status {
-    fn into(self) -> (bool,bool,bool) {
-        match self {
-            Status::None => (false, false, false), // black
-            Status::Init => (false, false, true), // blue
-            Status::Okay => (false, true, false), // green
-            Status::Error => (true, false, false), // red
-        }
-    }
-}
-
-static COLOR: embassy_sync::signal::Signal<embassy_sync::blocking_mutex::raw::CriticalSectionRawMutex, Status> = embassy_sync::signal::Signal::new();
+static COLOR: embassy_sync::signal::Signal<embassy_sync::blocking_mutex::raw::CriticalSectionRawMutex, Rgb888> = embassy_sync::signal::Signal::new();
 
 #[embassy_executor::task]
-pub async fn status_led(mut pin_red: embassy_rp::gpio::Output<'static>, mut pin_green: embassy_rp::gpio::Output<'static>, mut pin_blue: embassy_rp::gpio::Output<'static>) {
-    COLOR.signal(Status::Init);
-
-    { // init
-        let col = Status::Init;
-        let (red, green, blue) = col.into();
-
-        if red {
-            pin_red.set_high();
-        } else {
-            pin_red.set_low();
-        }
-
-        if green {
-            pin_green.set_high();
-        } else {
-            pin_green.set_low();
-        }
-
-        if blue {
-            pin_blue.set_high();
-        } else {
-            pin_blue.set_low();
-        }
-    }
-
+pub async fn status_led(mut stm: embassy_rp::pio::StateMachine<'static, embassy_rp::peripherals::PIO1, 0>) {
     loop { // update
         let col = COLOR.wait().await;
-        let (red, green, blue) = col.into();
 
-        if red {
-            pin_red.set_high();
-        } else {
-            pin_red.set_low();
-        }
+        let dat = ((col.red.reverse_bits() as u32) << 16) | ((col.green.reverse_bits() as u32) << 8) | (col.blue.reverse_bits() as u32);
 
-        if green {
-            pin_green.set_high();
-        } else {
-            pin_green.set_low();
-        }
+        stm.tx().push(dat);
 
-        if blue {
-            pin_blue.set_high();
-        } else {
-            pin_blue.set_low();
-        }
+        embassy_time::Timer::after_millis(1).await;
     }
 }
