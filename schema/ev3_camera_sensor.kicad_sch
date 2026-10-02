@@ -706,7 +706,7 @@
 					)
 				)
 			)
-			(property "Value" "OV7675 B0070"
+			(property "Value" "OV7670"
 				(at -4.318 13.462 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -774,7 +774,7 @@
 			(symbol "Conn_02x10_Odd_Even_1_1"
 				(rectangle
 					(start -12.7 11.43)
-					(end 3.81 -13.97)
+					(end 3.81 -11.43)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -786,7 +786,7 @@
 				(pin power_in line
 					(at -16.51 10.16 0)
 					(length 3.81)
-					(name "VCC"
+					(name "3V3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -876,7 +876,7 @@
 				(pin output line
 					(at 7.62 5.08 180)
 					(length 3.81)
-					(name "HSYNC"
+					(name "HREF"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1038,7 +1038,7 @@
 				(pin output line
 					(at -16.51 -7.62 0)
 					(length 3.81)
-					(name "D_{OUT}0"
+					(name "D_{OUT}1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1056,7 +1056,7 @@
 				(pin output line
 					(at 7.62 -7.62 180)
 					(length 3.81)
-					(name "D_{OUT}1"
+					(name "D_{OUT}0"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1071,10 +1071,10 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin input line
 					(at -16.51 -10.16 0)
 					(length 3.81)
-					(name "NC"
+					(name "RESET"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1089,44 +1089,8 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin input line
 					(at 7.62 -10.16 180)
-					(length 3.81)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "18"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -16.51 -12.7 0)
-					(length 3.81)
-					(name "PEN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "19"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 7.62 -12.7 180)
 					(length 3.81)
 					(name "PDN"
 						(effects
@@ -1135,7 +1099,7 @@
 							)
 						)
 					)
-					(number "20"
+					(number "18"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3228,7 +3192,7 @@
 		(uuid "7c7b0303-6af2-4af5-9f60-8329b9eacd14")
 	)
 	(junction
-		(at 236.22 137.16)
+		(at 236.22 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7e29adb9-f2a7-4628-8192-9a4f632d6c9a")
@@ -3252,7 +3216,7 @@
 		(uuid "b97001df-8dcc-42a3-8aee-d1cb8c34a7df")
 	)
 	(junction
-		(at 205.74 137.16)
+		(at 205.74 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fb7fc7de-fb4e-4039-9313-4d5a55a531f8")
@@ -3393,7 +3357,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 137.16) (xy 205.74 137.16)
+			(xy 209.55 134.62) (xy 205.74 134.62)
 		)
 		(stroke
 			(width 0)
@@ -3403,7 +3367,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 149.86) (xy 236.22 147.32)
+			(xy 236.22 147.32) (xy 236.22 144.78)
 		)
 		(stroke
 			(width 0)
@@ -3433,7 +3397,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 137.16) (xy 236.22 139.7)
+			(xy 236.22 134.62) (xy 236.22 137.16)
 		)
 		(stroke
 			(width 0)
@@ -3493,7 +3457,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 137.16) (xy 240.03 137.16)
+			(xy 236.22 134.62) (xy 240.03 134.62)
 		)
 		(stroke
 			(width 0)
@@ -3503,7 +3467,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 137.16) (xy 236.22 137.16)
+			(xy 233.68 134.62) (xy 236.22 134.62)
 		)
 		(stroke
 			(width 0)
@@ -3523,7 +3487,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 137.16) (xy 205.74 139.7)
+			(xy 205.74 134.62) (xy 205.74 137.16)
 		)
 		(stroke
 			(width 0)
@@ -3583,7 +3547,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 148.59) (xy 205.74 147.32)
+			(xy 205.74 146.05) (xy 205.74 144.78)
 		)
 		(stroke
 			(width 0)
@@ -3623,7 +3587,7 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 137.16) (xy 205.74 137.16)
+			(xy 201.93 134.62) (xy 205.74 134.62)
 		)
 		(stroke
 			(width 0)
@@ -3797,7 +3761,7 @@
 	)
 	(global_label "3V3"
 		(shape input)
-		(at 205.74 148.59 270)
+		(at 205.74 146.05 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3807,7 +3771,7 @@
 		)
 		(uuid "36f298e7-ad26-4656-a121-fb86e7a513b7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 205.74 155.0828 90)
+			(at 205.74 152.5428 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3893,7 +3857,7 @@
 	)
 	(global_label "OV7675_PDN"
 		(shape output)
-		(at 240.03 137.16 0)
+		(at 240.03 134.62 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3903,7 +3867,7 @@
 		)
 		(uuid "4db80d79-0d84-42e5-a00d-b5f86a882b5c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 255.1104 137.16 0)
+			(at 255.1104 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4013,7 +3977,7 @@
 	)
 	(global_label "GND"
 		(shape passive)
-		(at 236.22 149.86 270)
+		(at 236.22 147.32 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4023,7 +3987,7 @@
 		)
 		(uuid "575871f1-e8ee-436f-b96e-96145c575264")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 236.22 155.6044 90)
+			(at 236.22 153.0644 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4445,7 +4409,7 @@
 	)
 	(global_label "OV7675_PEN"
 		(shape output)
-		(at 201.93 137.16 180)
+		(at 201.93 134.62 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4455,7 +4419,7 @@
 		)
 		(uuid "90554572-7f2f-4787-921e-815a7c784aea")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 186.9706 137.16 0)
+			(at 186.9706 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5119,7 +5083,7 @@
 				)
 			)
 		)
-		(property "Value" "OV7675 B0070"
+		(property "Value" "OV7670"
 			(at 221.742 110.998 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5180,12 +5144,6 @@
 		(pin "17"
 			(uuid "e5278a3b-1f21-40cf-9185-999ea3a3e347")
 		)
-		(pin "19"
-			(uuid "2a10fc2f-a0c9-4165-8cf1-ae44856e3359")
-		)
-		(pin "20"
-			(uuid "3b83ca71-51ee-47b0-8e64-2ea36fbe87af")
-		)
 		(pin "8"
 			(uuid "db88a687-a2e1-429f-8c54-82ae628b14e8")
 		)
@@ -5233,7 +5191,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 205.74 143.51 0)
+		(at 205.74 140.97 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5244,7 +5202,7 @@
 		(fields_autoplaced yes)
 		(uuid "09d372a2-7e3a-473c-b1cb-c4f13ffc0a14")
 		(property "Reference" "R2"
-			(at 208.28 142.2399 0)
+			(at 208.28 139.6999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5255,7 +5213,7 @@
 			)
 		)
 		(property "Value" "10kΩ"
-			(at 208.28 144.7799 0)
+			(at 208.28 142.2399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5266,7 +5224,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 203.962 143.51 90)
+			(at 203.962 140.97 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5277,7 +5235,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 205.74 143.51 0)
+			(at 205.74 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5288,7 +5246,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 205.74 143.51 0)
+			(at 205.74 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6205,7 +6163,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 236.22 143.51 0)
+		(at 236.22 140.97 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6216,7 +6174,7 @@
 		(fields_autoplaced yes)
 		(uuid "a4fa9f2a-f9ff-4cc4-864e-490ce197b51d")
 		(property "Reference" "R1"
-			(at 238.76 142.2399 0)
+			(at 238.76 139.6999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6227,7 +6185,7 @@
 			)
 		)
 		(property "Value" "10kΩ"
-			(at 238.76 144.7799 0)
+			(at 238.76 142.2399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6238,7 +6196,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 234.442 143.51 90)
+			(at 234.442 140.97 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6249,7 +6207,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 236.22 143.51 0)
+			(at 236.22 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6260,7 +6218,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 236.22 143.51 0)
+			(at 236.22 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
